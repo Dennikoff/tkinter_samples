@@ -7,13 +7,13 @@ first_val = 0
 def add_digit(digit):
     entry.insert(tk.END, digit)
 
+
 def add_operation(oper):
     global operation
     global first_val
     operation = oper
     first_val = entry.get()
     buttondel()
-
 
 
 def buttonequal():
@@ -37,12 +37,16 @@ def buttondel():
 
 
 def create_digit_button(text, col, row):
-    button = tk.Button(text=text,relief=tk.RAISED, bd='5', command=lambda: add_digit(text))
+    button = tk.Button(text=text, relief=tk.RAISED, bd='5', command=lambda: add_digit(text),
+                       font=('Areal', 20)
+                       )
     button.grid(column=col, row=row, sticky='nswe')
     return button
 
+
 def create_operation_button(text, col, row):
-    button = tk.Button(text=text,relief=tk.RAISED, bd='5', command=lambda: add_operation(text))
+    button = tk.Button(text=text, relief=tk.RAISED, bd='5', foreground='red', command=lambda: add_operation(text),
+                       font=('Areal', 20))
     button.grid(column=col, row=row, sticky='nswe')
     return button
 
